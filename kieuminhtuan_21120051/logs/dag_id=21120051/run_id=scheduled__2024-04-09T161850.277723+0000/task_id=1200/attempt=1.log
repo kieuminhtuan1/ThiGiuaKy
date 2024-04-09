@@ -1,0 +1,13 @@
+[2024-04-09T16:24:04.337+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=non-requeueable deps ti=<TaskInstance: 21120051.1200 scheduled__2024-04-09T16:18:50.277723+00:00 [queued]>
+[2024-04-09T16:24:04.347+0000] {taskinstance.py:1979} INFO - Dependencies all met for dep_context=requeueable deps ti=<TaskInstance: 21120051.1200 scheduled__2024-04-09T16:18:50.277723+00:00 [queued]>
+[2024-04-09T16:24:04.348+0000] {taskinstance.py:2193} INFO - Starting attempt 1 of 2
+[2024-04-09T16:24:04.365+0000] {taskinstance.py:2214} INFO - Executing <Task(PythonOperator): 1200> on 2024-04-09 16:18:50.277723+00:00
+[2024-04-09T16:24:04.377+0000] {standard_task_runner.py:60} INFO - Started process 1311 to run task
+[2024-04-09T16:24:04.383+0000] {standard_task_runner.py:87} INFO - Running: ['***', 'tasks', 'run', '21120051', '1200', 'scheduled__2024-04-09T16:18:50.277723+00:00', '--job-id', '128', '--raw', '--subdir', 'DAGS_FOLDER/pipeline.py', '--cfg-path', '/tmp/tmpjt4jljfy']
+[2024-04-09T16:24:04.386+0000] {standard_task_runner.py:88} INFO - Job 128: Subtask 1200
+[2024-04-09T16:24:04.636+0000] {task_command.py:423} INFO - Running <TaskInstance: 21120051.1200 scheduled__2024-04-09T16:18:50.277723+00:00 [running]> on host dcb7ab325c84
+[2024-04-09T16:24:04.711+0000] {taskinstance.py:2510} INFO - Exporting env vars: AIRFLOW_CTX_DAG_OWNER='21120051' AIRFLOW_CTX_DAG_ID='21120051' AIRFLOW_CTX_TASK_ID='1200' AIRFLOW_CTX_EXECUTION_DATE='2024-04-09T16:18:50.277723+00:00' AIRFLOW_CTX_TRY_NUMBER='1' AIRFLOW_CTX_DAG_RUN_ID='scheduled__2024-04-09T16:18:50.277723+00:00'
+[2024-04-09T16:24:04.932+0000] {python.py:202} INFO - Done. Returned value was: {'status': 'success', 'message': 'Data inserted to Vector DB successfully'}
+[2024-04-09T16:24:04.965+0000] {taskinstance.py:1149} INFO - Marking task as SUCCESS. dag_id=21120051, task_id=1200, execution_date=20240409T161850, start_date=20240409T162404, end_date=20240409T162404
+[2024-04-09T16:24:04.995+0000] {local_task_job_runner.py:234} INFO - Task exited with return code 0
+[2024-04-09T16:24:05.200+0000] {taskinstance.py:3309} INFO - 1 downstream tasks scheduled from follow-on schedule check

@@ -1,5 +1,5 @@
 # build app từ image python:3.9.11 (image python:3.9.11 sẽ có khi load thành công app_khdl16a1.tar)
-FROM 
+FROM python:3.9.11
 
 WORKDIR /app
 

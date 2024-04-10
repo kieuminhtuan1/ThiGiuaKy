@@ -9,7 +9,7 @@ app = flask.Flask(__name__)
 
 def search(query):
     # đặt tên collection bạn đã tạo khi thực hiện pipeline vào biến bên dưới
-    collection_name = 21120051
+    collection_name = "21120051"
     # thực hiện kết nối với cơ sở dữ liệu qdrant
     client = QdrantClient(host="qdrant_db", port=6333)
     collections = client.get_collections()

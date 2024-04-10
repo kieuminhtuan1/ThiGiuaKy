@@ -76,15 +76,15 @@ services:
       - qdrant-network
     ports:
       - "27017:27017"
-  # myapp:
-  #   build: ../MyApp
-  #   ports:
-  #     - "8989:9951"
-  #   networks:
-  #     - qdrant-network
-  #   depends_on:
-  #     - qdrant_db
-  #     - mongodb
+  myapp:
+    build: ../MyApp
+    ports:
+      - "8989:9951"
+    networks:
+      - qdrant-network
+    depends_on:
+      - qdrant_db
+      - mongodb
 
   redis:
     image: redis:latest

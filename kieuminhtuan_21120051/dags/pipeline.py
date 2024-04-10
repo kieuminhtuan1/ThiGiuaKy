@@ -113,12 +113,8 @@ def insert_data_qdrant():
         for new in news.find({"status": "new"}):
             mongo_id = new['_id']  # Keep the original MongoDB _id
             id = str(new.pop('_id'))
-
             # Get the 'embedding' field
-            vector = new.pop('embedding', None)
-            if vector is None or len(vector) != 1536:
-                continue  # Skip this document if it doesn't have a valid vector
-
+            vector = new.pop('embedding')
             # Create a point for Qdrant
             point = PointStruct(id=str(uuid.uuid4()),
                                 vector=vector, payload=new)
@@ -176,19 +172,11 @@ def search_by_vector():
         result = qdrant_client.search(
             collection_name=name_collection_qdrant, query_vector=random_vector, limit=1)
 
-        # Lấy kết quả dưới dạng JSON nếu có
-        result_item = next(iter(result), None)
-        if result_item:
-            result_json = result_item.model_dump()
-            return {
-                "status": "success",
-                "result": result_json
-            }
-        else:
-            return {
-                "status": "success",
-                "result": "No results found"
-            }
+        result_json = result[0].model_dump()
+        return {
+            "status": "success",
+            "result": result_json
+        }
     except Exception as e:
         return {
             "status": "error",

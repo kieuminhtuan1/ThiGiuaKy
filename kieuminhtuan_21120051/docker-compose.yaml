@@ -79,7 +79,7 @@ services:
   myapp:
     build: ../MyApp
     ports:
-      - "8989:9951"
+      - "9951:9951"
     networks:
       - qdrant-network
     depends_on:

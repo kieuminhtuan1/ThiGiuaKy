@@ -112,7 +112,7 @@ def insert_data_qdrant():
         # Read data from MongoDB
         for new in news.find({"status": "new"}):
             mongo_id = new['_id']  # Keep the original MongoDB _id
-            id = str(new.pop('_id'))
+            id = new.pop('_id')
             # Get the 'embedding' field
             vector = new.pop('embedding')
             # Create a point for Qdrant
